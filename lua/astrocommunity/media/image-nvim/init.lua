@@ -7,6 +7,7 @@ return {
   {
     "3rd/image.nvim",
     event = "VeryLazy",
+    cond = vim.env.TERM == "xterm-kitty",
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter",
