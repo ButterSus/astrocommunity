@@ -11,7 +11,7 @@ return {
     "MultipleCursorsLock",
   },
   dependencies = {
-    { "AstroNvim/astroui", opts = { icons = { MultipleCursors = "󰆿" } } },
+    { "AstroNvim/astroui", opts = { icons = { MultipleCursors = "󰗧" } } },
     {
       "AstroNvim/astrocore",
       opts = function(_, opts)
