@@ -33,6 +33,12 @@ return {
               end,
               desc = "Explorer",
             },
+            ["<leader>o"] = {
+              function()
+                if not require("mini.files").close() then require("mini.files").open(vim.api.nvim_buf_get_name(0)) end
+              end,
+              desc = "Reveal File",
+            },
           },
         },
       },
