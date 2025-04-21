@@ -44,7 +44,7 @@ return {
       },
     },
   },
-  config = function()
+  config = function(_, opts)
     -- Source: https://github.com/echasnovski/mini.nvim/blob/12ebac8280869048c286d13bd35cfa6653e07642/doc/mini-files.txt#L508-L534
     local MiniFiles = require "mini.files"
 
