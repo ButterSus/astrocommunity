@@ -7,7 +7,7 @@ return {
       opts = {
         mappings = {
           x = {
-            ["s"] = {
+            ["gs"] = {
               function() require("flash").jump() end,
               desc = "Flash",
             },
@@ -15,7 +15,7 @@ return {
               function() require("flash").treesitter_search() end,
               desc = "Treesitter Search",
             },
-            ["S"] = {
+            ["gS"] = {
               function() require("flash").treesitter() end,
               desc = "Flash Treesitter",
             },
@@ -29,21 +29,21 @@ return {
               function() require("flash").treesitter_search() end,
               desc = "Treesitter Search",
             },
-            ["s"] = {
+            ["gs"] = {
               function() require("flash").jump() end,
               desc = "Flash",
             },
-            ["S"] = {
+            ["gS"] = {
               function() require("flash").treesitter() end,
               desc = "Flash Treesitter",
             },
           },
           n = {
-            ["s"] = {
+            ["gs"] = {
               function() require("flash").jump() end,
               desc = "Flash",
             },
-            ["S"] = {
+            ["gS"] = {
               function() require("flash").treesitter() end,
               desc = "Flash Treesitter",
             },
