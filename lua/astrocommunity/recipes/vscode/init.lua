@@ -82,6 +82,10 @@ return {
       maps.n["<Leader>e"] = function() require("vscode").action "workbench.files.action.focusFilesExplorer" end
       maps.n["<Leader>o"] = function() require("vscode").action "workbench.files.action.focusFilesExplorer" end
 
+      -- UI/UX
+      maps.n["<Leader>uZ"] = function() require("vscode").action "workbench.action.toggleZenMode" end
+      maps.n["<Leader>uw"] = function() require("vscode").action "editor.action.toggleWordWrap" end
+
       -- indentation
       maps.v["<Tab>"] = function() require("vscode").action "editor.action.indentLines" end
       maps.v["<S-Tab>"] = function() require("vscode").action "editor.action.outdentLines" end
