@@ -1,3 +1,32 @@
+vim.cmd [[
+function! CustomSystemVerilogIndent()
+  let line = getline(v:lnum)
+
+  " If line starts with a closing delimiter, handle it manually
+  if line =~ '^\s*[)\]}]'
+    let char = matchstr(line, '[)\]}]')
+    let open = char == ')' ? '(' : char == ']' ? '[' : char == '}' ? '{' : ''
+
+    " Try to find matching opener
+    if open !=# ''
+      let [match_lnum, _] = searchpairpos(open, '', char, 'bnW')
+      if match_lnum > 0
+        return indent(match_lnum)
+      endif
+    endif
+  endif
+
+  " Fallback to original indent logic
+  return SystemVerilogIndent()
+endfunction
+]]
+
+-- Set indentexpr to our wrapper, buffer-locally, for verilog/systemverilog files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "verilog", "systemverilog" },
+  callback = function() vim.bo.indentexpr = "CustomSystemVerilogIndent()" end,
+})
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -38,11 +67,6 @@ return {
         "--lint-only",
         "--Wall",
       }
-
-      -- Auto-lint on these events
-      vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
-        callback = function() lint.try_lint() end,
-      })
     end,
   },
 }
