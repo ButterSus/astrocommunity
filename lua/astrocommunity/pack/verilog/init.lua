@@ -67,6 +67,13 @@ return {
         "--lint-only",
         "--Wall",
       }
+
+      -- Auto-lint on these events
+      vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+        -- WARN: If you have other nvim-lint setup config, this will cause duplicated code.
+        -- Ideally, this should be managed via general autocmd group for nvim-lint
+        callback = function() lint.try_lint() end,
+      })
     end,
   },
 }
