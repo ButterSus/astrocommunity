@@ -77,7 +77,9 @@ return {
       maps.n["<Leader>c"] = "<Cmd>Tabclose<CR>"
       maps.n["<Leader>C"] = "<Cmd>Tabclose!<CR>"
       maps.n["<Leader>bc"] = function() require("vscode").action "workbench.action.closeOtherEditors" end
+      maps.n["<Leader>bC"] = function() require("vscode").action "workbench.action.closeEditorsInGroup" end
       maps.n["<Leader>bp"] = "<Cmd>Tablast<CR>"
+      maps.n["<Leader>X"] = function() require("vscode").action "workbench.action.closeAllEditors" end
 
       -- file explorer
       maps.n["<Leader>e"] = function() require("vscode").action "workbench.files.action.focusFilesExplorer" end
