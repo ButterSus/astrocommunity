@@ -31,6 +31,7 @@ vim.tbl_map(function(plugin) enabled[plugin] = true end, {
   "vim-easy-align",
   "vim-repeat",
   "vim-sandwich",
+  "vim-exchange",
   "yanky.nvim",
   -- feel free to open PRs to add more support!
 })
