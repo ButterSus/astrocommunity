@@ -73,14 +73,17 @@ return {
       maps.n["<C-'>"] = function() require("vscode").action "workbench.action.terminal.toggleTerminal" end
 
       -- buffer management
-      maps.n["]b"] = "<Cmd>Tabnext<CR>"
-      maps.n["[b"] = "<Cmd>Tabprevious<CR>"
+      maps.n["]b"] = function() require("vscode").action "workbench.action.nextEditorInGroup" end
+      maps.n["<Tab>"] = function() require("vscode").action "workbench.action.nextEditorInGroup" end
+      maps.n["[b"] = function() require("vscode").action "workbench.action.previousEditorInGroup" end
+      maps.n["<S-Tab>"] = function() require("vscode").action "workbench.action.previousEditorInGroup" end
       maps.n["<Leader>c"] = "<Cmd>Tabclose<CR>"
       maps.n["<Leader>C"] = "<Cmd>Tabclose!<CR>"
       maps.n["<Leader>bc"] = function() require("vscode").action "workbench.action.closeOtherEditors" end
       maps.n["<Leader>bC"] = function() require("vscode").action "workbench.action.closeEditorsInGroup" end
       maps.n["<Leader>bp"] = "<Cmd>Tablast<CR>"
       maps.n["<Leader>X"] = function() require("vscode").action "workbench.action.closeAllEditors" end
+      maps.n["<Leader><Leader>"] = function() require("vscode").action "workbench.action.moveEditorToNewWindow" end
 
       -- file explorer
       maps.n["<Leader>e"] = function() require("vscode").action "workbench.files.action.focusFilesExplorer" end
