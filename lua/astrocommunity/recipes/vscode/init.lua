@@ -56,7 +56,8 @@ return {
       local maps = assert(opts.mappings)
 
       -- basic actions
-      maps.n["<Leader>q"] = function() require("vscode").action "workbench.action.closeWindow" end
+      maps.n["<Leader>q"] = function() require("vscode").action "workbench.action.closeEditorsInGroup" end
+      maps.n["<Leader>Q"] = function() require("vscode").action "workbench.action.closeWindow" end
       maps.n["<Leader>w"] = function() require("vscode").action "workbench.action.files.save" end
       maps.n["<Leader>n"] = function() require("vscode").action "welcome.showNewFileEntries" end
 
