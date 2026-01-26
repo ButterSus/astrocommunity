@@ -101,6 +101,8 @@ return {
       -- diagnostics
       maps.n["]d"] = function() require("vscode").action "editor.action.marker.nextInFiles" end
       maps.n["[d"] = function() require("vscode").action "editor.action.marker.prevInFiles" end
+      maps.n["]e"] = function() require("vscode").action "editor.action.marker.nextInFiles" end
+      maps.n["[e"] = function() require("vscode").action "editor.action.marker.prevInFiles" end
 
       -- pickers (emulate telescope mappings)
       maps.n["<Leader>fc"] = function()
